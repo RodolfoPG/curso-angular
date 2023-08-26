@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Animal } from 'src/app/animal';
+import { Animal } from 'src/app/Animal';
 
 @Component({
   selector: 'app-list-render',
