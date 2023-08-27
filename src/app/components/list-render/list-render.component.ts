@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { Animal } from 'src/app/Animal';
+import { ListService } from 'src/app/services/list.service';
 
 @Component({
   selector: 'app-list-render',
@@ -18,8 +19,15 @@ export class ListRenderComponent {
 
   animalDetails = ''
 
+  constructor(private listService: ListService) {}
+
   showAge(animal: Animal): void { // void é usado quando não retorna nada.
     this.animalDetails = `O pet ${animal.name} tem ${animal.age} anos!`
+  }
+
+  removeAnimal(animal: Animal) {
+    console.log('Removendo animal...')
+    this.animals = this.listService.remove(this.animals, animal)
   }
 
 }
